@@ -20,6 +20,7 @@ const fontFamily = (textWeight: string = TextWeight.regular) => {
 
 const CustomText: React.FC<IProps> = styled.Text`
     font-family: ${({ textWeight }: IProps) => fontFamily(textWeight)};
+    font-size: ${({ size }: IProps) => size}px;
 `;
 
 const Text: React.FC<IProps> = ({ children, size = 12, textWeight = TextWeight.regular, ...props }) => (

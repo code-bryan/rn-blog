@@ -1,42 +1,38 @@
 import React from 'react';
 import {
   SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
   StatusBar,
 } from 'react-native';
 
-import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
-import Text, { TextWeight } from '../../../components/atoms/text/text';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import styled from 'styled-components/native';
+import Text from '../../../components/atoms/text/text';
+import Header from '../../../components/organisms/header/header';
 
-declare const global: {HermesInternal: null | {}};
+const Container = styled.ScrollView`
+  background-color: ${Colors.white};
+`;
+
+const Body = styled.View`
+  background-color: ${Colors.white};
+  flex: 1;
+`;
+
 
 const HomeScreen: React.FunctionComponent<any> = () => {
-    return (
-      <>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}
-          >
-            <View style={styles.body}>
-              <Text>Hola</Text>
-            </View>
-          </ScrollView>
-        </SafeAreaView>
-      </>
-    );
-  };
-
-const styles = StyleSheet.create({
-    scrollView: {
-      backgroundColor: Colors.lighter,
-    },
-    body: {
-      backgroundColor: Colors.white,
-    },
-});
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <Header />
+      <SafeAreaView>
+        <Container contentInsetAdjustmentBehavior="automatic">
+          <Body>
+            {Array.from(Array(100)).map(() => <Text size={25}>Hola</Text>)}
+          </Body>
+        </Container>
+      </SafeAreaView>
+    </>
+  );
+};
 
 export default HomeScreen;

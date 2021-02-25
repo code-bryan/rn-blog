@@ -9,7 +9,7 @@ export enum HomeScreens {
 const Stack = createStackNavigator();
 
 const HomeModule = () => (
-    <Stack.Navigator initialRouteName={HomeScreens.Home}>
+    <Stack.Navigator initialRouteName={HomeScreens.Home} headerMode="none">
         <Stack.Screen component={HomeScreen} name={HomeScreens.Home} />
     </Stack.Navigator>
 );
