@@ -1,26 +1,28 @@
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import styled from 'styled-components/native';
+import Text from '../../atoms/text/text';
 
-const Container = styled.ScrollView`
+const List = styled.FlatList`
   background-color: #fff;
 `;
 
 interface IProps {
     header: React.ReactNode;
     stories: React.ReactNode;
-    content: React.ReactNode;
+    data: any[];
 }
 
-const Home = ({ header, content, stories }: IProps) => (
+const Home = ({ header, data = [], stories }: IProps) => (
     <>
         <StatusBar barStyle="dark-content" />
         {header}
         <SafeAreaView>
-            <Container contentInsetAdjustmentBehavior="automatic">
-                {stories}
-                {content}
-            </Container>
+            <List 
+                data={data}
+                ListHeaderComponent={() => (<>{stories}</>)}
+                renderItem={() => <Text size={25}>Hola</Text>}
+            />
         </SafeAreaView>
     </>
 );

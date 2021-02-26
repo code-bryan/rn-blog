@@ -1,16 +1,16 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import HomeScreen from './screens/home.screen';
+import FeedScreen from './screens/feed.screen';
 
 export enum HomeScreens {
-    Home = 'Home'
+    Feed = 'Feed'
 }
 
 const Stack = createStackNavigator();
 
 const HomeModule = () => (
-    <Stack.Navigator initialRouteName={HomeScreens.Home} headerMode="none">
-        <Stack.Screen component={HomeScreen} name={HomeScreens.Home} />
+    <Stack.Navigator initialRouteName={HomeScreens.Feed} headerMode="none">
+        <Stack.Screen component={FeedScreen} name={HomeScreens.Feed} />
     </Stack.Navigator>
 );
 
