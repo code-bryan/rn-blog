@@ -16,7 +16,7 @@ const FeedScreen: React.FunctionComponent<any> = () => {
     <Home 
       header={<Header onCameraPress={onCameraPressHandler} onDirectPress={onDirectPressHandler} />}
       stories={<Stories />}
-      data={Array.from(Array(30)).map(() => ({ text: 10 }))}
+      data={Array.from(Array(30)).fill({text: 'no'})}
     />
   );
 };

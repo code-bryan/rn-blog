@@ -19,7 +19,8 @@ const Container = styled.View`
 `;
 
 const OptionContainer = styled.View`
-    width: 20%;
+    padding-right: 10px;
+    width: 22%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -36,8 +37,8 @@ const Header:  React.FC<Props> = ({ onCameraPress, onDirectPress }) => (
             <Logo />
             
             <OptionContainer>
-                <DirectButton onPress={onDirectPress} />
                 <CameraButton onPress={onCameraPress} />
+                <DirectButton onPress={onDirectPress} />
             </OptionContainer>
         </Container>
     </SafeArea>
