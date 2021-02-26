@@ -16,8 +16,13 @@ const Container = styled.View`
     align-items: center;
     justify-content: space-between;
     padding-horizontal: 12px;
-    border-bottom-width: .4px;
-    border-bottom-color:#B3B3B3;
+`;
+
+const OptionContainer = styled.View`
+    width: 20%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 interface Props {
@@ -28,11 +33,12 @@ interface Props {
 const Header:  React.FC<Props> = ({ onCameraPress, onDirectPress }) => (
     <SafeArea >
         <Container>
-            <CameraButton onPress={onCameraPress} />
-            
             <Logo />
-
-            <DirectButton onPress={onDirectPress} />
+            
+            <OptionContainer>
+                <DirectButton onPress={onDirectPress} />
+                <CameraButton onPress={onCameraPress} />
+            </OptionContainer>
         </Container>
     </SafeArea>
 );

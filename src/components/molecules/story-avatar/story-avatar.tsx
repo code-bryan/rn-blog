@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
+import Add from '../../atoms/icons/add/add';
 import Image from '../../atoms/image/image';
 import Text from '../../atoms/text/text';
 
@@ -38,6 +39,21 @@ const ReviewedContainer = styled.View`
     border-color: #fff;
 `;
 
+const AddStoryContainer = styled.View`
+    background-color: #1993DF;
+    border-radius: 50px;
+    height: ${30}px;
+    width: ${30}px;
+    border-width: 3px;
+    border-color: #fff;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+`;
+
 
 const AvatarWithActiveStory = () => (
     <Image source={Background} height={IMAGE_SIZE_BACKGROUND + 1} width={IMAGE_SIZE_BACKGROUND + 1}>
@@ -58,6 +74,9 @@ const ReviewedAvatar = () => (
 const UserAvatar = () => (
     <ImageContainer>
         <Avatar source={Img} height={IMAGE_SIZE} width={IMAGE_SIZE} />
+        <AddStoryContainer>
+            <Add size={18} />
+        </AddStoryContainer>
     </ImageContainer>
 );
 
@@ -82,7 +101,7 @@ const StoryAvatar: React.FC<IProps> = ({ onPress, type = StoryAvatarState.review
                 
             
                 <View style={{ marginTop: 5 }}>
-                    <Text size={12} color="#919191">Your Story</Text>
+                    <Text size={12} color="#919191">Text</Text>
                 </View>
             </Container>
         </TouchableWithoutFeedback>
