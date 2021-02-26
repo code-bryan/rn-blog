@@ -6,11 +6,13 @@ export enum TextWeight {
     regular = 'regular',
     light = 'light',
     bold = 'bold',
+    medium = 'medium',
 }
 
 interface IProps extends TextProps {
     textWeight?: TextWeight;
     size?: number;
+    color?: string;
 }
 
 const fontFamily = (textWeight: string = TextWeight.regular) => {
@@ -21,10 +23,11 @@ const fontFamily = (textWeight: string = TextWeight.regular) => {
 const CustomText: React.FC<IProps> = styled.Text`
     font-family: ${({ textWeight }: IProps) => fontFamily(textWeight)};
     font-size: ${({ size }: IProps) => size}px;
+    color: ${({ color }: IProps) => color};
 `;
 
-const Text: React.FC<IProps> = ({ children, size = 12, textWeight = TextWeight.regular, ...props }) => (
-    <CustomText size={size} {...props}>
+const Text: React.FC<IProps> = ({ children, size = 12, color = '#000', textWeight = TextWeight.regular, ...props }) => (
+    <CustomText size={size} color={color} textWeight={textWeight} {...props}>
         {children}
     </CustomText>
 );

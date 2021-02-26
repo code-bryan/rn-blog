@@ -10,16 +10,18 @@ interface IProps {
 
 const StyledImage: React.FC<FastImageProps & IProps> = styled(FastImage)`
     width: ${({ width }: IProps) => width}px;
-    height: ${({ height }: IProps) => height}px; 
+    height: ${({ height }: IProps) => height}px;
 `;
 
-const Image = ({ width = 30, height = 30, ...props }: IProps) => {
+const Image: React.FC<IProps> = ({ width = 30, height = 30, children, ...props }) => {
     return (
         <StyledImage
             width={width}
             height={height}
             {...props}
-        />
+        >
+            {children}
+        </StyledImage>
     );
 };
 
