@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import Logo from '../../atoms/logo/logo';
-import CameraButton from '../buttons/camera-button/camera-button';
-import DirectButton from '../buttons/direct-button/direct-button';
+import CameraButton from '../../molecules/buttons/camera-button/camera-button';
+import DirectButton from '../../molecules/buttons/direct-button/direct-button';
 
 const SafeArea = styled.SafeAreaView`
     background-color: #fff;
